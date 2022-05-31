@@ -171,9 +171,9 @@ FAQ
 * Can I build nested parsers that work with the same input file?::  
 * How can I match text only at the end of a file?::  
 * How can I make yyreject() cascade across start condition boundaries?::  
-* Why cant I use fast or full tables with interactive mode?::  
+* Why can't I use fast or full tables with interactive mode?::  
 * How much faster is -F or -f than -C?::  
-* If I have a simple grammar cant I just parse it with flex?::  
+* If I have a simple grammar can't I just parse it with flex?::  
 * Why doesn't yyrestart() set the start state back to INITIAL?::  
 * How can I match C-style comments?::  
 * The period isn't working the way I expected.::  
@@ -316,7 +316,7 @@ produce an executable.  When the executable is run, it analyzes its
 input for occurrences of the regular expressions.  Whenever it finds
 one, it executes the corresponding rule code.
 
-When your target language is C, the name of the generated scanner
+When your target language is C, the name of the generated scanner is
 @file{lex.yy.c} by default.  Other languages will glue the suffix they
 normally use for source-code files to the prefix @file{lex.yy}.
 
@@ -366,7 +366,7 @@ have seen a version of the above example that looked more like this:
 @end example
 
 Both versions count the number of characters and the number of lines in
-its input. Both produces no output other than the final report on the
+its input. Both produce no output other than the final report on the
 character and line counts.  The first code line declares two globals,
 @code{num_lines} and @code{num_chars}, which are accessible both inside
 @code{yylex()} and in the @code{main()} routine declared after the
@@ -405,7 +405,7 @@ scanner can be run concurrently without stepping on each others'
 storage.
 
 (The @code{%option noyywrap} in these examples is helpful in
-making them run standalone, but does not change the behavior of the scsnner.)
+making them run standalone, but does not change the behavior of the scanner.)
 
 A somewhat more complicated example:
 
@@ -3129,7 +3129,7 @@ no longer provides one for you by default.
 @opindex ---main
 @opindex main
 @item --main, @code{%option main}
- directs flex to provide a default @code{main()} program for the
+directs flex to provide a default @code{main()} program for the
 scanner, which simply calls @code{yylex()}.  This option implies
 @code{noyywrap} (see below).
 
@@ -3138,9 +3138,9 @@ scanner, which simply calls @code{yylex()}.  This option implies
 @opindex yyterminate
 @hkindex yyterminate
 @item @code{%option yyterminate}
-This is a string-valuued option with which you can specify an expansion
-of the yyterminate() hook. whuch normally causes the generated
-scanner to return 0 as an end-of-input indication.
+This is a string-valued option with which you can specify an expansion
+of the @code{yyterminate()} hook. @code{yyterminate()} normally causes the
+generated scanner to return 0 as an end-of-input indication.
 
 @anchor{option-nounistd}
 @opindex ---nounistd
